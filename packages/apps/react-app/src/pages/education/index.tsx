@@ -7,7 +7,7 @@ type Props = {};
 
 type FPlugin<T> = (ctx: T) => Promise<T>;
 
-interface IValidCore {
+export interface IValidCore {
     addPlugin: (type: string, cb: FPlugin<any>) => {};
     usePlugins: (type: string, name: string, ...params: Array<string>) => {};
     addLog: (log: string, ctx: any) => {};

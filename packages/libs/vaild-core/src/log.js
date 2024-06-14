@@ -5,10 +5,13 @@ export const mixinLog = function (VaildCore) {
             let ctxs = ctx.current.loggin.push(str)
             resolve(ctxs);
         });
-        // return  ctx.current.loggin.push(str);
+        //   ctx.current.loggin.push(str);
     }
 
     VaildCore.prototype.getLog = function (str, ctx) {
-        return ctx.current.loggin
+        return new Promise((resolve, reject) => {
+            resolve(ctx.current.loggin)
+        })
+        // return ctx.current.loggin
     }
 }
