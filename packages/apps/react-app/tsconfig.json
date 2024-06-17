@@ -108,7 +108,7 @@
   },
 "include": [
   "./src/**/*"
-],
+, "themePlugin.js"],
   "exclude": [
     "node_modules","dist"
   ]

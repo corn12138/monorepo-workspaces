@@ -130,7 +130,7 @@ const useRefInsObsState = (ref: RefObject<HTMLDivElement>) => {
             if (entries[0]?.isIntersecting && lockRef.current) {
                 lockRef.current = false;
                 apiGet({
-                    url: "feed",
+                    url: "feed/list",
                     startNum: listRef.current.length,
                     pageSize: 10,
                 }).then((res) => {
