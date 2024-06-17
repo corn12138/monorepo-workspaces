@@ -4,6 +4,6 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-
+    "./babelConsolePlugin.js"
   ]
 }

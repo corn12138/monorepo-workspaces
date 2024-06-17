@@ -4,7 +4,7 @@ const inst = axios.create();
 
 inst.interceptors.response.use((resp) => resp.data);
 
-const COMMON_URL = `http://192.168.43.135:3008/api`;
+const COMMON_URL = `http://0.0.0.0:3008/api`;
 
 export interface FeedOpts {
     url: string;
