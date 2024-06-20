@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('core-js/modules/esnext.async-iterator.for-each.js'), require('core-js/modules/esnext.iterator.constructor.js'), require('core-js/modules/esnext.iterator.for-each.js'), require('koa'), require('koa-router'), require('core-js/modules/esnext.async-iterator.reduce.js'), require('core-js/modules/esnext.iterator.reduce.js'), require('core-js/modules/es.array.push.js')) :
-    typeof define === 'function' && define.amd ? define(['core-js/modules/esnext.async-iterator.for-each.js', 'core-js/modules/esnext.iterator.constructor.js', 'core-js/modules/esnext.iterator.for-each.js', 'koa', 'koa-router', 'core-js/modules/esnext.async-iterator.reduce.js', 'core-js/modules/esnext.iterator.reduce.js', 'core-js/modules/es.array.push.js'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(null, null, null, global.Koa, global.Router));
-})(this, (function (esnext_asyncIterator_forEach_js, esnext_iterator_constructor_js, esnext_iterator_forEach_js, Koa, Router) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('core-js/modules/esnext.async-iterator.for-each.js'), require('core-js/modules/esnext.iterator.constructor.js'), require('core-js/modules/esnext.iterator.for-each.js'), require('koa'), require('koa-router'), require('koa-bodyparser'), require('core-js/modules/esnext.async-iterator.reduce.js'), require('core-js/modules/esnext.iterator.reduce.js'), require('core-js/modules/es.array.push.js'), require('jsonwebtoken')) :
+    typeof define === 'function' && define.amd ? define(['core-js/modules/esnext.async-iterator.for-each.js', 'core-js/modules/esnext.iterator.constructor.js', 'core-js/modules/esnext.iterator.for-each.js', 'koa', 'koa-router', 'koa-bodyparser', 'core-js/modules/esnext.async-iterator.reduce.js', 'core-js/modules/esnext.iterator.reduce.js', 'core-js/modules/es.array.push.js', 'jsonwebtoken'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(null, null, null, global.Koa, global.Router, global.bodyParser, null, null, null, global.jwt));
+})(this, (function (esnext_asyncIterator_forEach_js, esnext_iterator_constructor_js, esnext_iterator_forEach_js, Koa, Router, bodyParser, esnext_asyncIterator_reduce_js, esnext_iterator_reduce_js, es_array_push_js, jwt) { 'use strict';
 
     const RequestMethod = {
       GET: "get",
@@ -67,15 +67,129 @@
             所以， 装饰器 ，是帮我们在运行之前 做收集的。
      */
 
-    var _dec$1, _dec2$1, _class$1, _class2$1;
+    // 构建一个自定义的 jwt的插件
+    const SALT = 'fengkuangxingqisi.vme50';
+    const signature = user => jwt.sign(user, SALT, {
+      expiresIn: "10h"
+    });
+    const verify = async token => {
+      return new Promise((resolve, reject) => {
+        if (token) {
+          jwt.verify(token, SALT, (err, data) => {
+            if (err) {
+              if (err.name === "tokenExprieError") {
+                resolve({
+                  status: "failed",
+                  error: "tokenExprieError"
+                });
+              } else {
+                resolve({
+                  status: "failed",
+                  error: "token 非法"
+                });
+              }
+            } else {
+              resolve({
+                status: "success",
+                // error:"token is null"
+                data
+              });
+            }
+          });
+        } else {
+          resolve({
+            status: "failed",
+            error: "token is null"
+          });
+        }
+      });
+    };
+    const jwtVerify = whiteList => async (ctx, next) => {
+      if (whiteList.includes(ctx.path)) {
+        next(ctx);
+      } else {
+        // 这里开始鉴权的逻辑
+        let token;
+        try {
+          token = ctx.request.header.authorization.split("Bearer ")[1];
+        } catch (error) {
+          const res = await verify(token);
+          if (res.status === 'success') {
+            next(ctx);
+          } else {
+            ctx.body = {
+              ...res,
+              code: 401
+            };
+          }
+        }
+      }
+    };
+
+    //
+
+    class UserService {
+      async validate({
+        username,
+        password
+      }) {
+        console.log(username, password, "<=======");
+        if (username && password) {
+          //走 SQL的逻辑
+          if (username === 'luyi') {
+            if (password === '123456') {
+              const token = signature({
+                username
+              });
+              return {
+                code: 200,
+                msg: '登录成功',
+                status: "success",
+                data: {
+                  token
+                }
+              };
+            }
+            ;
+            return {
+              code: 200,
+              msg: "密码不正确",
+              status: "failed"
+            };
+          }
+          ;
+          return {
+            code: 200,
+            msg: "账号未注册",
+            status: "failed"
+          };
+        }
+        ;
+        return {
+          code: 200,
+          msg: "账号密码未填写",
+          status: "failed"
+        };
+      }
+    }
+    ;
+
+    var _dec$1, _dec2$1, _dec3, _class$1, _class2$1;
     function _applyDecoratedDescriptor$1(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
-    let UserController = (_dec$1 = Controller("/user"), _dec2$1 = RequestMapping(RequestMethod.GET, "/all"), _dec$1(_class$1 = (_class2$1 = class UserController {
+    let UserController = (_dec$1 = Controller("/user"), _dec2$1 = RequestMapping(RequestMethod.GET, "/all"), _dec3 = RequestMapping(RequestMethod.POST, "/login"), _dec$1(_class$1 = (_class2$1 = class UserController {
       async getAllTeachers(ctx) {
         ctx.body = {
           data: ['luyi', "yunyin"]
         };
       }
-    }, (_applyDecoratedDescriptor$1(_class2$1.prototype, "getAllTeachers", [_dec2$1], Object.getOwnPropertyDescriptor(_class2$1.prototype, "getAllTeachers"), _class2$1.prototype)), _class2$1)) || _class$1);
+      async loginUser(ctx) {
+        const {
+          body
+        } = ctx.request;
+        const userService = new UserService();
+        ctx.body = await userService.validate(body);
+      }
+    }, (_applyDecoratedDescriptor$1(_class2$1.prototype, "getAllTeachers", [_dec2$1], Object.getOwnPropertyDescriptor(_class2$1.prototype, "getAllTeachers"), _class2$1.prototype), _applyDecoratedDescriptor$1(_class2$1.prototype, "loginUser", [_dec3], Object.getOwnPropertyDescriptor(_class2$1.prototype, "loginUser"), _class2$1.prototype)), _class2$1)) || _class$1);
 
     const mockList1 = [{
       id: "18_1716607619.756",
@@ -2774,6 +2888,7 @@
 
     const app = new Koa();
     const router = new Router();
+    app.use(bodyParser());
     app.use(async (ctx, next) => {
       ctx.set("Access-Control-Allow-Origin", "*");
       ctx.set("Access-Control-Allow-Header", "*");
@@ -2785,6 +2900,11 @@
         await next(ctx);
       }
     });
+
+    // jwt
+    app.use(jwtVerify([
+    // 跳过这两个接口的验证
+    "/api/user/login", '/api/user/register']));
     const COMMON_API = '/api';
     controllers.forEach(item => {
       let {

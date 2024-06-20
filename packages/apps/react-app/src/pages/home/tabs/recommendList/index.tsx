@@ -1,6 +1,7 @@
 import React, { FC, MouseEventHandler, RefObject, useEffect, useRef, useState } from 'react';
 // import { mockList } from './MockList';
 import { apiGet } from '../../../../api/request';
+import { sendLog } from '../../../../utils/apis';
 
 type Props = {}
 
@@ -13,6 +14,18 @@ interface ItemProps {
 const RecommendData: FC<ItemProps> = ({ item }) => {
 
     const [selected, setSelected] = useState<boolean>(false);
+
+
+    const lockRef = useRef<boolean>(false);
+    const divRef = useRef(null);
+
+    useRefInsObsEffect((bool)=>{
+        if(bool&&(!lockRef.current)){
+            // sendLog()
+        }
+    },divRef)
+
+    // 
 
 
     const handleClick: MouseEventHandler<Element> = (event) => {

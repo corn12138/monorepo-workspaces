@@ -26,8 +26,8 @@ export class BaseTrack extends AsyncTrackQueue<TrackData> {
             seqId: this.seq++,
             timestamp: Date.now(),
             ...data
-        });
-    };
+        })
+    }
 
     protected consumeTaskQueue(data: Array<TrackData>): Promise<unknown> {
         // 1px gif 方案
@@ -44,5 +44,5 @@ export class BaseTrack extends AsyncTrackQueue<TrackData> {
                 resolve(data.map(item => item.msg))
             })
         }).then(console.log)
-    };
-};
+    }
+}
