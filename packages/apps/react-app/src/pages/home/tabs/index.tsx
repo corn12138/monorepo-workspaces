@@ -50,7 +50,7 @@ function Tabs({ onChange }: Props) {
   return (
     <div className='w-full'>
         <div ref={scrollRef}></div>
-        <div className='flex '>
+        <div className='flex'>
            <PureTab /> 
         </div>
         <Outlet />

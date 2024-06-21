@@ -4,7 +4,7 @@ import App from './app';
 import "./index.less"
 import { Performance } from './utils/apis';
 
-ReactDom.createRoot(document.getElementById("app") as Element)
+ReactDom.createRoot(document.getElementById("root") as Element)
     .render(<App />)
 
 Performance.init();

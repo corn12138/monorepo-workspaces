@@ -37,7 +37,7 @@ const RecommendData: FC<ItemProps> = ({ item }) => {
 
     return <div className='flex flex-col items-start p-4 border-b'>
         {/* 标题部分 */}
-        <div className='h-auto flex justify-start'>
+        <div className='h-auto flex  justify-start'>
             <a className='font-bold text-black text-lg leading-10'
                 target='_blank'
                 href={href}
