@@ -1,8 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader");
-const Webpack = require("webpack")
 module.exports = function (isDev) {
     return {
         // 1. 输入输出部分
@@ -19,7 +17,7 @@ module.exports = function (isDev) {
             path: path.resolve(__dirname, "../dist"),
             // 每个输出的 js 的名称
             // hash, chunkhash, contenthash 
-            filename: "static/js/[name].[hash:8].js",
+            filename: "static/js/[name].[content:8].js",
             // webpack 4 没有，clean-webpack-plugin
             // webpack 5 内置，构建前删除一下 dist
             clean: true,
@@ -115,12 +113,6 @@ module.exports = function (isDev) {
                 filename: isDev ? "static/css/[name].css" :
                     "static/css/[name].[contenthash:4].css"
             }),
-            new VueLoaderPlugin(),
-            new Webpack.DefinePlugin({
-                __VUE_OPTIONS_API__: false,  // 如果你只使用 Composition API，则设为 false
-                __VUE_PROD_DEVTOOLS__: false,  // 生产环境建议设为 false
-                __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false  // 生产环境建议设为 false
-            })
         ]
     }
 }
