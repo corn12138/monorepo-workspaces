@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" class="border-y-gray-300">
         <RouterView></RouterView>
     </div>
 </template>

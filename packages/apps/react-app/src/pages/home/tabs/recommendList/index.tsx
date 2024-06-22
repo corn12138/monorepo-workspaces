@@ -189,6 +189,7 @@ const RecommendList = ({ }: Props) => {
     const [list, len] = useRefInsObsState(scrollRef);
 
 
+    // @ts-ignore
     return (
         <div className='flex flex-col border-t'>
             <h5>一共有{len}条数据</h5>

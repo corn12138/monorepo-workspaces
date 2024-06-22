@@ -1,8 +1,8 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-
+const VueLoaderPlugin = require("vue-loader");
+const Webpack = require("webpack")
 module.exports = function (isDev) {
     return {
         // 1. 输入输出部分
@@ -114,17 +114,13 @@ module.exports = function (isDev) {
             new MiniCssExtractPlugin({
                 filename: isDev ? "static/css/[name].css" :
                     "static/css/[name].[contenthash:4].css"
+            }),
+            new VueLoaderPlugin(),
+            new Webpack.DefinePlugin({
+                __VUE_OPTIONS_API__: false,  // 如果你只使用 Composition API，则设为 false
+                __VUE_PROD_DEVTOOLS__: false,  // 生产环境建议设为 false
+                __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false  // 生产环境建议设为 false
             })
         ]
-
-
-
-
-
-
-
-
-
-
     }
 }

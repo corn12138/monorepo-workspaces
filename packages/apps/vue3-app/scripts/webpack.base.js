@@ -7,6 +7,10 @@ const Webpack = require("webpack")
 module.exports = function (isDev) {
     return {
         entry: path.resolve(__dirname, "../src/main.ts"),
+        // 使用webpack-dev-server 默认的打包不会生成 dist ,所以需要配置一下 writeToDisk:true
+        devServer:{
+            devMiddleware: {writeToDisk: isDev ? false : true,}
+        },
         output: {
             path: path.resolve(__dirname, "../dist"),
             filename: 'static/js/[name].[fullhash:8].js',
@@ -57,15 +61,7 @@ module.exports = function (isDev) {
                                         }
                                     }
                                 },
-                                // "postcss-loader",
-                                {
-                                    loader: 'postcss-loader',
-                                    options: {
-                                      postcssOptions: {
-                                        config: path.resolve(__dirname, '../../postcss.config.js'), // 调整路径以指向正确的位置
-                                      },
-                                    },
-                                  },
+                                "postcss-loader",
                                 "less-loader"
                             ]
                         },
@@ -74,15 +70,8 @@ module.exports = function (isDev) {
                             use: [
                                 isDev ? "style-loader" : MiniExtractPlugin.loader,
                                 "css-loader",
-                                // "postcss-loader"
-                                {
-                                    loader: 'postcss-loader',
-                                    options: {
-                                      postcssOptions: {
-                                        config: path.resolve(__dirname, '../../postcss.config.js'), // 调整路径以指向正确的位置
-                                      },
-                                    },
-                                  },
+                                "postcss-loader"
+
                             ]
                         },
                         {
@@ -90,15 +79,7 @@ module.exports = function (isDev) {
                             use: [
                                 isDev ? "style-loader" : MiniExtractPlugin.loader,
                                 "css-loader",
-                                // "postcss-loader",
-                                {
-                                    loader: 'postcss-loader',
-                                    options: {
-                                      postcssOptions: {
-                                        config: path.resolve(__dirname, '../../postcss.config.js'), // 调整路径以指向正确的位置
-                                      },
-                                    },
-                                  },
+                                "postcss-loader",
                                 "less-loader"
                             ]
                         }

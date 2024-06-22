@@ -2,16 +2,16 @@ const {merge} = require("webpack-merge");
 const getBaseCfg = require("./webpack.base.js");
 
 const CssMinimizerPlugin= require("css-minimizer-webpack-plugin");
+const MiniCSSExtractPlugin= require("mini-css-extract-plugin")
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 
 module.exports = merge(getBaseCfg(false),{
     mode:"production",
-
     optimization:{
         minimize:true,
         minimizer:[
-            new CssMinimizerPlugin(),
+            new MiniCSSExtractPlugin(),
             new TerserPlugin({
                 parallel:true,
                 terserOptions:{
@@ -22,18 +22,18 @@ module.exports = merge(getBaseCfg(false),{
             })
         ],
         // 代码自动分包
-        splitChunks:{
-            cacheGroups:{
-                vendors:{
-                    name:"vendors",
-                    test:/node_modules/,
-                    miniChunk:3,
-                    miniSize:10
-                },
-                commons:{
-                    name:"commons"
-                }
-            }
-        }
+        // splitChunks:{
+        //     cacheGroups:{
+        //         vendors:{
+        //             name:"vendors",
+        //             test:/node_modules/,
+        //             miniChunk:3,
+        //             miniSize:10
+        //         },
+        //         commons:{
+        //             name:"commons"
+        //         }
+        //     }
+        // }
     }
 });
