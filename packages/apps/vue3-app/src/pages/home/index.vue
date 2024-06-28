@@ -12,6 +12,7 @@
   </div>
   <div class="w-1/2 mx-auto my-0 flex justify-center bg-violet-600">水平居中3</div>
   
+  
 </template>
 
 <script setup lang="ts">

@@ -4,7 +4,7 @@ const inst = axios.create();
 
 inst.interceptors.response.use((resp) => resp.data);
 
-const COMMON_URL = `http://192.168.43.135:4000/api`;
+const COMMON_URL = `http://192.168.43.215:4000/api`;
 
 export interface FeedOpts {
     url: string;
@@ -22,9 +22,3 @@ export const apiGet = (opts: FeedOpts) => {
     })
 }
 
-//  我们想要请求，第一页。
-// apiGet({
-//     url: "feed",
-//     startNum: 0,
-//     pageSize: 10
-// })

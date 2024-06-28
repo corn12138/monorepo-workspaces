@@ -3,4 +3,4 @@ node_modules
 .vscode
 dist
 pnpm-lock.yaml
-
+.DS_store

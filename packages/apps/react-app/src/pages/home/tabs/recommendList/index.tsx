@@ -2,6 +2,7 @@ import React, { FC, MouseEventHandler, RefObject, useEffect, useRef, useState } 
 // import { mockList } from './MockList';
 import { apiGet } from '../../../../api/request';
 import { sendLog } from '../../../../utils/apis';
+import { RequestQueue } from "../../../../utils/requestQueue"
 
 type Props = {}
 
@@ -10,6 +11,7 @@ interface ItemProps {
 
 }
 
+const queue = new RequestQueue(); //请求队列
 
 const RecommendData: FC<ItemProps> = ({ item }) => {
 
@@ -19,11 +21,11 @@ const RecommendData: FC<ItemProps> = ({ item }) => {
     const lockRef = useRef<boolean>(false);
     const divRef = useRef(null);
 
-    useRefInsObsEffect((bool)=>{
-        if(bool&&(!lockRef.current)){
+    useRefInsObsEffect((bool) => {
+        if (bool && (!lockRef.current)) {
             // sendLog()
         }
-    },divRef)
+    }, divRef)
 
     // 
 
@@ -142,15 +144,26 @@ const useRefInsObsState = (ref: RefObject<HTMLDivElement>) => {
             // entries[0]?.isIntersecting 发生变化时，通知你执行，你传进来的自定义函数。
             if (entries[0]?.isIntersecting && lockRef.current) {
                 lockRef.current = false;
-                apiGet({
-                    url: "feed/list",
-                    startNum: listRef.current.length,
-                    pageSize: 10,
-                }).then((res) => {
-                    listRef.current = [...listRef.current, ...res?.list as unknown as Array<any>];
-                    setList(listRef.current);
-                    lockRef.current = true;
-                });
+                const apigetlist =
+                    () =>
+                        new Promise((resolve, reject) => {
+                            apiGet({
+                                url: "feed/list",
+                                startNum: listRef.current.length,
+                                pageSize: 10,
+                            }).then((res) => {
+                                listRef.current = [...listRef.current, ...res?.list as unknown as Array<any>];
+                                setList(listRef.current);
+
+                                lockRef.current = true;
+                                return resolve(listRef)
+                            }).catch((err) => {
+                                console.error(err)
+                                return reject(err)
+                            })
+                        })
+                // apigetlist()
+                queue.enqueue(apigetlist)
             }
         });
         ref.current && intersectionObserver.observe(ref.current);
