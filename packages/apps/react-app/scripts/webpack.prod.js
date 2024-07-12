@@ -18,22 +18,23 @@ module.exports = merge(getWebpackConfig(false), {
                     pure_funcs: ["console.log", "console.warn"],
                 }
             }
-        })]
+        })],
+        //     代码自动分包
+        // splitChunks: {
+        //     cacheGroups: {
+        //         vendors:{
+        //             name:"vendors",
+        //             test: /node_modules/,
+        //             // minChunks:1,
+        //             // miniSize:
+        //         },
+        //         commons:{
+        //             name:"commons",
+        //         }
+        //     }
+        // },
     },
-    //     代码自动分包
-    // splitChunks: {
-    //     cacheGroups: {
-    //         vendors:{
-    //             name:"vendors",
-    //             test: /node_modules/,
-    //             // minChunks:1,
-    //             // miniSize:
-    //         },
-    //         commons:{
-    //             name:"commons",
-    //         }
-    //     }
-    // },
+
 
     // 使用 自己编写的插件 
     plugins: [

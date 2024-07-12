@@ -20,7 +20,13 @@ const routes: Array<RouteRecordRaw> = [
                 path: '/archive',
                 name: 'archive',
                 component: () => import("@/pages/archive/index.vue")
-            }
+            },
+            {
+                path: '/testPage',
+                name: 'testPage',
+                component: () => import("@/pages/testPage/index.vue")
+            },
+
         ]
     },
     {
