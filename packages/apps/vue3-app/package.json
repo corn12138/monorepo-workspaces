@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@antv/g": "^6.0.10",
+    "@antv/g-canvas": "^2.0.8",
+    "@antv/g-svg": "^2.0.8",
+    "@antv/g-webgl": "^2.0.11",
     "@headlessui/vue": "^1.7.22",
     "vue": "^3.4.31",
     "vue-router": "^4.3.3",

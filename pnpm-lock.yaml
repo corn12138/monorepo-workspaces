@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.14.10
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.12.0
         version: 7.13.1(@typescript-eslint/parser@7.13.1(eslint@9.5.0)(typescript@5.5.3))(eslint@9.5.0)(typescript@5.5.3)
@@ -168,7 +171,7 @@ importers:
         version: 4.0.0(webpack@5.92.1(webpack-cli@5.1.4))
       tailwindcss:
         specifier: ^3.4.4
-        version: 3.4.4(ts-node@10.9.2(typescript@5.5.3))
+        version: 3.4.4(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))
       terser-webpack-plugin:
         specifier: ^5.3.10
         version: 5.3.10(webpack@5.92.1(webpack-cli@5.1.4))
@@ -213,7 +216,7 @@ importers:
         version: 6.23.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwindcss:
         specifier: ^3.4.4
-        version: 3.4.4(ts-node@10.9.2(typescript@5.5.3))
+        version: 3.4.4(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))
     devDependencies:
       '@babel/core':
         specifier: ^7.24.7
@@ -302,6 +305,18 @@ importers:
 
   packages/apps/vue3-app:
     dependencies:
+      '@antv/g':
+        specifier: ^6.0.10
+        version: 6.0.10
+      '@antv/g-canvas':
+        specifier: ^2.0.8
+        version: 2.0.8
+      '@antv/g-svg':
+        specifier: ^2.0.8
+        version: 2.0.8
+      '@antv/g-webgl':
+        specifier: ^2.0.11
+        version: 2.0.11
       '@headlessui/vue':
         specifier: ^1.7.22
         version: 1.7.22(vue@3.4.31(typescript@5.5.3))
@@ -365,7 +380,7 @@ importers:
         version: 4.0.0(webpack@5.92.1(webpack-cli@5.1.4))
       tailwindcss:
         specifier: ^3.4.4
-        version: 3.4.4(ts-node@10.9.2(typescript@5.5.3))
+        version: 3.4.4(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))
       terser-webpack-plugin:
         specifier: ^5.3.10
         version: 5.3.10(webpack@5.92.1(webpack-cli@5.1.4))
@@ -456,7 +471,7 @@ importers:
         version: 3.1.4
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@20.14.8)(typescript@5.5.3)
+        version: 10.9.2(@types/node@20.14.10)(typescript@5.5.3)
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -470,6 +485,69 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@antv/g-camera-api@2.0.9':
+    resolution: {integrity: sha512-ixeF5lypyNqZ6Btua6FC7w3YvGi+WnmtDIAalByaM8lGDlYroZNYQTsOeVE4JsS15kjQwEe+GYs+e0jWgdXpeg==}
+
+  '@antv/g-canvas@2.0.8':
+    resolution: {integrity: sha512-XyzFGq3xqIRxEnIIU310FyOyuNAuUKyh93plgkRkF2dOCpS3RAVQRRxD1vnG47NShwjfo3Pn0qiIKTSyxGXQZg==}
+
+  '@antv/g-device-api@1.6.12':
+    resolution: {integrity: sha512-bOLA3MqvPFbTNNhrNyEpyYzAC8gHPioJHqKtPfAfdXBec+to2nciQoihGhRrosDwjAQLBLtVF+nc7zG2DnHgcg==}
+
+  '@antv/g-dom-mutation-observer-api@2.0.6':
+    resolution: {integrity: sha512-VIdXYxaIa82oqxLu2si+zaMq+UCU4CZS1sdtE4oROEe9uhA4vlZsynfnoOD+nw5RcTwKWx9nu1IxI/xsjFXUvw==}
+
+  '@antv/g-lite@2.0.6':
+    resolution: {integrity: sha512-7lYAtxrNHqtQIsBYCub6HLrMNm0828dzBed9Kge1hZtLbTL0weCmZBq/te/0lpdNDVeP/XqwYmT6toIi3sc0Ew==}
+
+  '@antv/g-math@3.0.0':
+    resolution: {integrity: sha512-AkmiNIEL1vgqTPeGY2wtsMdBBqKFwF7SKSgs+D1iOS/rqYMsXdhp/HvtuQ5tx/HdawE/ZzTiicIYopc520ADZw==}
+
+  '@antv/g-plugin-canvas-path-generator@2.0.6':
+    resolution: {integrity: sha512-wMRUPowlyp1t7u3aalBZM0gQXCrOVNqNpodOOwFPqe+M0qBpHmh9gUF1AtXyg3m84i4HCUFgmupJ9YZVCnZ2lg==}
+
+  '@antv/g-plugin-canvas-picker@2.0.7':
+    resolution: {integrity: sha512-c1igCBXG4ZBvzxrTQ9DNxhYdA1gkzNv6JbTmT2ZDIBMxkLi1sD9jjEF00vc1+d2OHS3bpqmfpLkIniZCtAN3kA==}
+
+  '@antv/g-plugin-canvas-renderer@2.0.7':
+    resolution: {integrity: sha512-GcfAyCXrsBCOUWPx8MnyMN3TJ/ocb9APg6gO1LeN5F8YN0fpkKqxuhfHTtc5D1dCG0+8VQWSyI3HdkbOOhA3vA==}
+
+  '@antv/g-plugin-device-renderer@2.0.10':
+    resolution: {integrity: sha512-tQNmuQ6Y00ivp48dkHeWksOtEtU5Oar3CTYDo+YVB1Pg+rmE+5EXjoPsiPGiUDj9B+GiElPhR5zwdrTzNoCB4A==}
+
+  '@antv/g-plugin-dom-interaction@2.0.6':
+    resolution: {integrity: sha512-tu9+PNPSc7JOO+rZ/Q7tTuPMbMXRsXg9AVVaB+PzwGuYYQmCfRuudtPa5+lVWzXaFc6wlThb4v9qeA2AerqeNw==}
+
+  '@antv/g-plugin-html-renderer@2.0.7':
+    resolution: {integrity: sha512-j5zuVJ3cBm0VfJBTAtMa5GB159HSInBBXO3Nup4UVaKjl7JSL0Qkz5vZCvRX6rv6UD19+vH483v7JtQ+JXcgHA==}
+
+  '@antv/g-plugin-image-loader@2.0.6':
+    resolution: {integrity: sha512-lyJ157fDqH0iFBYwFGUxZNUOxN0vRV5hF7e0iK9ElvSEc2ovqpLi0UVwjAbA67eJwpd5Y771Go1sRfx0XJo87Q==}
+
+  '@antv/g-plugin-svg-picker@2.0.8':
+    resolution: {integrity: sha512-BWOXsW9iAwxjvpek6iNnGrVjCbDKIImmfBW1iX9QrA6fWuR5s4EJLKXOJXdlJoZYfiGsJCx73ANA+N0ziUB03w==}
+
+  '@antv/g-plugin-svg-renderer@2.0.8':
+    resolution: {integrity: sha512-c4tzffm0IGCcM7brUE0fRoILyEnyIZtkrn4DdbkSswdb9r86odCGQiBs751G9XgS6kzo+6ZlPGDvrJU7iNNvzA==}
+
+  '@antv/g-shader-components@2.0.0':
+    resolution: {integrity: sha512-qdUAz0ZZSrAFrBKxne7kUMWt2v+kncnpWwdDD7SGa7OCtcnWADl6lUUiL0r29gBMcoDtPXJijsjS/e/w9cVWuQ==}
+
+  '@antv/g-svg@2.0.8':
+    resolution: {integrity: sha512-JlZIRW+68TM8PgodLmhTdZ5qwMhVpGOoBErOEupmT1VKs1LIluzXLSo5ubK6c31w9C1BW3g/ujH22gkxwCI2xA==}
+
+  '@antv/g-web-animations-api@2.0.7':
+    resolution: {integrity: sha512-BpP86sTRAgNAWHDNajOhoM0YC2eL95iUFGcRftulrZ/8sqnTXF/M/I319vcznylwKNS37tzVmEppn76vS35UmQ==}
+
+  '@antv/g-webgl@2.0.11':
+    resolution: {integrity: sha512-5dbzIPmXT919uI0f3KSJgHwPYd9IQDI1qs2XQxSHz4vLV4BrMFBothZAg7cy3rwgQft64NQ6IC24tisgfwQtUg==}
+
+  '@antv/g@6.0.10':
+    resolution: {integrity: sha512-VH45ddgHQhEzWZ4aDpHHcu6f77vIVKhfEMgHZzUL9bnMTmJ2P4qf0DtarhP6BKvxcHlFFpJcSyYSxTurNHvW5w==}
+
+  '@antv/util@3.3.7':
+    resolution: {integrity: sha512-qqPg7rIPCsJyl7N56jAC25v/99mJ3ApVkgBsGijhiWrEeKvzXBPk1r5P77Pm9nCljpnn+hH8Z3t5AivbEoTJMg==}
 
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
@@ -1499,6 +1577,9 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
+  '@types/node@20.14.10':
+    resolution: {integrity: sha512-MdiXf+nDuMvY0gJKxyfZ7/6UFsETO7mGKF54MVD/ekJS6HdFtpZFBgrh6Pseu64XTb2MLyFPlbW6hj8HYRQNOQ==}
+
   '@types/node@20.14.8':
     resolution: {integrity: sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==}
 
@@ -1705,6 +1786,9 @@ packages:
 
   '@webassemblyjs/wast-printer@1.12.1':
     resolution: {integrity: sha512-+X4WAlOisVWQMikjbcvY2e0rwPsKQ9F688lksZhBcPycBBuii3O7m8FACbDMWDojpAqvjIncrG8J0XHKyQfVeA==}
+
+  '@webgpu/types@0.1.44':
+    resolution: {integrity: sha512-JDpYJN5E/asw84LTYhKyvPpxGnD+bAKPtpW9Ilurf7cZpxaTbxkQcGwOd7jgB9BPBrTYQ+32ufo4HiuomTjHNQ==}
 
   '@webpack-cli/configtest@2.1.1':
     resolution: {integrity: sha512-wy0mglZpDSiSS0XHrVR+BAdId2+yxPSoJW8fsna3ZpYSlufjvxnP4YbKTCBZnNIcGN4r6ZPXV55X4mYExOfLmw==}
@@ -2236,6 +2320,10 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
+  d3-color@3.1.0:
+    resolution: {integrity: sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==}
+    engines: {node: '>=12'}
+
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -2362,6 +2450,9 @@ packages:
 
   dottie@2.0.6:
     resolution: {integrity: sha512-iGCHkfUc5kFekGiqhe8B/mdaurD+lakO9txNnTvKtA6PISrw86LgqHvRzWYPyoE2Ph5aMIrCw9/uko6XHTKCwA==}
+
+  earcut@2.2.4:
+    resolution: {integrity: sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==}
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -2529,6 +2620,9 @@ packages:
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
 
+  eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+
   events@3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
@@ -2657,6 +2751,9 @@ packages:
   get-stream@6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
+
+  gl-matrix@3.4.3:
+    resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -3909,6 +4006,9 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  quickselect@2.0.0:
+    resolution: {integrity: sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==}
+
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
@@ -3919,6 +4019,9 @@ packages:
   raw-body@2.5.2:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
+
+  rbush@3.0.1:
+    resolution: {integrity: sha512-XRaVO0YecOpEuIvbhbpTrZgoiI6xBlz6hnlr6EHhd+0x9ase6EmeN+hdwwUaJvLcsFFQ8iWVF1GAK1yB0BWi0w==}
 
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
@@ -4706,6 +4809,168 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@antv/g-camera-api@2.0.9':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-canvas@2.0.8':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/g-plugin-canvas-path-generator': 2.0.6
+      '@antv/g-plugin-canvas-picker': 2.0.7
+      '@antv/g-plugin-canvas-renderer': 2.0.7
+      '@antv/g-plugin-dom-interaction': 2.0.6
+      '@antv/g-plugin-html-renderer': 2.0.7
+      '@antv/g-plugin-image-loader': 2.0.6
+      '@antv/util': 3.3.7
+      tslib: 2.6.3
+
+  '@antv/g-device-api@1.6.12':
+    dependencies:
+      '@antv/util': 3.3.7
+      '@webgpu/types': 0.1.44
+      eventemitter3: 5.0.1
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-dom-mutation-observer-api@2.0.6':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+
+  '@antv/g-lite@2.0.6':
+    dependencies:
+      '@antv/g-math': 3.0.0
+      '@antv/util': 3.3.7
+      d3-color: 3.1.0
+      eventemitter3: 5.0.1
+      gl-matrix: 3.4.3
+      rbush: 3.0.1
+      tslib: 2.6.3
+
+  '@antv/g-math@3.0.0':
+    dependencies:
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-plugin-canvas-path-generator@2.0.6':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/g-math': 3.0.0
+      '@antv/util': 3.3.7
+      tslib: 2.6.3
+
+  '@antv/g-plugin-canvas-picker@2.0.7':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/g-math': 3.0.0
+      '@antv/g-plugin-canvas-path-generator': 2.0.6
+      '@antv/g-plugin-canvas-renderer': 2.0.7
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-plugin-canvas-renderer@2.0.7':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/g-math': 3.0.0
+      '@antv/g-plugin-canvas-path-generator': 2.0.6
+      '@antv/g-plugin-image-loader': 2.0.6
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-plugin-device-renderer@2.0.10':
+    dependencies:
+      '@antv/g-device-api': 1.6.12
+      '@antv/g-lite': 2.0.6
+      '@antv/g-math': 3.0.0
+      '@antv/g-plugin-image-loader': 2.0.6
+      '@antv/g-shader-components': 2.0.0
+      '@antv/util': 3.3.7
+      '@webgpu/types': 0.1.44
+      earcut: 2.2.4
+      eventemitter3: 5.0.1
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-plugin-dom-interaction@2.0.6':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      tslib: 2.6.3
+
+  '@antv/g-plugin-html-renderer@2.0.7':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-plugin-image-loader@2.0.6':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-plugin-svg-picker@2.0.8':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/g-plugin-svg-renderer': 2.0.8
+      tslib: 2.6.3
+
+  '@antv/g-plugin-svg-renderer@2.0.8':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g-shader-components@2.0.0': {}
+
+  '@antv/g-svg@2.0.8':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/g-plugin-dom-interaction': 2.0.6
+      '@antv/g-plugin-svg-picker': 2.0.8
+      '@antv/g-plugin-svg-renderer': 2.0.8
+      '@antv/util': 3.3.7
+      tslib: 2.6.3
+
+  '@antv/g-web-animations-api@2.0.7':
+    dependencies:
+      '@antv/g-lite': 2.0.6
+      '@antv/util': 3.3.7
+      tslib: 2.6.3
+
+  '@antv/g-webgl@2.0.11':
+    dependencies:
+      '@antv/g-device-api': 1.6.12
+      '@antv/g-lite': 2.0.6
+      '@antv/g-plugin-device-renderer': 2.0.10
+      '@antv/g-plugin-dom-interaction': 2.0.6
+      '@antv/g-plugin-html-renderer': 2.0.7
+      '@antv/g-plugin-image-loader': 2.0.6
+      '@antv/util': 3.3.7
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
+
+  '@antv/g@6.0.10':
+    dependencies:
+      '@antv/g-camera-api': 2.0.9
+      '@antv/g-dom-mutation-observer-api': 2.0.6
+      '@antv/g-lite': 2.0.6
+      '@antv/g-web-animations-api': 2.0.7
+
+  '@antv/util@3.3.7':
+    dependencies:
+      fast-deep-equal: 3.1.3
+      gl-matrix: 3.4.3
+      tslib: 2.6.3
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -5939,6 +6204,10 @@ snapshots:
     dependencies:
       '@types/node': 20.14.8
 
+  '@types/node@20.14.10':
+    dependencies:
+      undici-types: 5.26.5
+
   '@types/node@20.14.8':
     dependencies:
       undici-types: 5.26.5
@@ -6252,6 +6521,8 @@ snapshots:
     dependencies:
       '@webassemblyjs/ast': 1.12.1
       '@xtuc/long': 4.2.2
+
+  '@webgpu/types@0.1.44': {}
 
   '@webpack-cli/configtest@2.1.1(webpack-cli@5.1.4(webpack-dev-server@5.0.4)(webpack@5.92.1))(webpack@5.92.1(webpack-cli@5.1.4))':
     dependencies:
@@ -6800,6 +7071,8 @@ snapshots:
 
   csstype@3.1.3: {}
 
+  d3-color@3.1.0: {}
+
   debug@2.6.9:
     dependencies:
       ms: 2.0.0
@@ -6911,6 +7184,8 @@ snapshots:
       tslib: 2.6.3
 
   dottie@2.0.6: {}
+
+  earcut@2.2.4: {}
 
   eastasianwidth@0.2.0: {}
 
@@ -7082,6 +7357,8 @@ snapshots:
 
   eventemitter3@4.0.7: {}
 
+  eventemitter3@5.0.1: {}
+
   events@3.3.0: {}
 
   execa@5.1.1:
@@ -7250,6 +7527,8 @@ snapshots:
       hasown: 2.0.2
 
   get-stream@6.0.1: {}
+
+  gl-matrix@3.4.3: {}
 
   glob-parent@5.1.2:
     dependencies:
@@ -8254,13 +8533,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.38
 
-  postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(typescript@5.5.3)):
+  postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.4.5
     optionalDependencies:
       postcss: 8.4.38
-      ts-node: 10.9.2(@types/node@20.14.8)(typescript@5.5.3)
+      ts-node: 10.9.2(@types/node@20.14.10)(typescript@5.5.3)
 
   postcss-loader@8.1.1(postcss@8.4.38)(typescript@5.5.3)(webpack@5.92.1(webpack-cli@5.1.4)):
     dependencies:
@@ -8470,6 +8749,8 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
+  quickselect@2.0.0: {}
+
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -8482,6 +8763,10 @@ snapshots:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+
+  rbush@3.0.1:
+    dependencies:
+      quickselect: 2.0.0
 
   react-dom@18.3.1(react@18.3.1):
     dependencies:
@@ -8971,7 +9256,7 @@ snapshots:
       '@pkgr/core': 0.1.1
       tslib: 2.6.3
 
-  tailwindcss@3.4.4(ts-node@10.9.2(typescript@5.5.3)):
+  tailwindcss@3.4.4(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -8990,7 +9275,7 @@ snapshots:
       postcss: 8.4.38
       postcss-import: 15.1.0(postcss@8.4.38)
       postcss-js: 4.0.1(postcss@8.4.38)
-      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(typescript@5.5.3))
+      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))
       postcss-nested: 6.0.1(postcss@8.4.38)
       postcss-selector-parser: 6.1.0
       resolve: 1.22.8
@@ -9068,14 +9353,14 @@ snapshots:
       typescript: 5.5.3
       webpack: 5.92.1(webpack-cli@5.1.4)
 
-  ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.3):
+  ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.14.8
+      '@types/node': 20.14.10
       acorn: 8.12.0
       acorn-walk: 8.3.3
       arg: 4.1.3

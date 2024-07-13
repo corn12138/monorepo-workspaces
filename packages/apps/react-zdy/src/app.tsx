@@ -1,17 +1,17 @@
 import React from "react";
-import { HashRouter, useRoutes } from 'react-router-dom';
+import { HashRouter, useRoutes,BrowserRouter } from 'react-router-dom';
 
-import {router} from "./router";
+import { router } from "./router";
 
 type Props = {};
 
-const Routers = ()=>useRoutes(router);
+const Routers = () => useRoutes(router);
 
-const App:React.FC = ({}:Props)=>{
+const App: React.FC = ({ }: Props) => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Routers></Routers>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

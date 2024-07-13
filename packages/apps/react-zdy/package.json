@@ -2,7 +2,7 @@
   "name": "react-zdy",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.tsx",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config scripts/webpack.dev.js",
     "build": "webpack-dev-server --config scripts/webpack.prod.js"
