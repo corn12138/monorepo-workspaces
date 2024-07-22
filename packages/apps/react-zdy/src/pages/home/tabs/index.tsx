@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const tabs = [
     { name: "好文翻译", to: "/frontPage" },
@@ -16,7 +16,7 @@ export const PureTab = () => {
             to={item.to}
             className={
                 ({ isActive }) => (
-                    " whitespace-nowrap p-4 px-6 text-base transition-all" + (isActive ? "text-blue-600 font-bold" : "text-black hover:text-blue-900")
+                    " whitespace-nowrap p-4 px-6 text-base transition-all " + (isActive ? "text-blue-600 font-bold" : "text-black hover:text-blue-900")
                 )
             }
         >
@@ -30,10 +30,10 @@ const Tabs = () => {
     return (
         <div className='w-full'>
             <div ></div>
-            <div className='flex'>
+            <div className='flex justify-center'>
                 <PureTab />
             </div>
-            <Outlet />
+            
         </div>
     )
 }

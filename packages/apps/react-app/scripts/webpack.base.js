@@ -17,7 +17,7 @@ module.exports = function (isDev) {
             path: path.resolve(__dirname, "../dist"),
             // 每个输出的 js 的名称
             // hash, chunkhash, contenthash 
-            filename: "static/js/[name].[content:8].js",
+            filename: "static/js/[name].[contenthash].js",
             // webpack 4 没有，clean-webpack-plugin
             // webpack 5 内置，构建前删除一下 dist
             clean: true,

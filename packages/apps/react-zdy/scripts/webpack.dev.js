@@ -8,6 +8,7 @@ module.exports = merge(getBaseConfig(true),{
     mode:"development",
     // 开启 源码调试
     devtool:"eval-cheap-module-source-map",
+    // devtool:false,
     devServer:{
         port:3008,
         hot:true,

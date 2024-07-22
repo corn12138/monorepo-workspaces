@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.20.0",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
     "lodash": "^4.17.21",
@@ -25,6 +27,8 @@
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
+    "@sentry/cli": "^2.32.2",
+    "@sentry/webpack-plugin": "^2.21.1",
     "@types/lodash": "^4.17.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

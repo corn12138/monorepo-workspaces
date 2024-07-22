@@ -38,9 +38,9 @@ function Tabs({ onChange }: Props) {
             // console.log("=====>", entries[0]?.isIntersecting)
             onChange?.(entries[0]?.isIntersecting)
         });
-
+        //开启监听
         scrollRef.current && intersectionObserver.observe(scrollRef.current);
-
+        //移除监听
         return () => {
             scrollRef.current && intersectionObserver.unobserve(scrollRef.current);
         }

@@ -1,6 +1,12 @@
-import React from "react";
+import React,{lazy} from "react";
 
 import { RouteObject } from "react-router-dom"
+//
+// import Home from "../pages/home/index"
+const Home = lazy(()=>import("../pages/home/index")); //HOME页 懒加载
+
+import Test from "../pages/testPages/index"
+
 
 export interface ExtraBizObject {
     title?: string
@@ -10,7 +16,7 @@ export type ZRouter = RouteObject & ExtraBizObject;
 
 export const router: Array<ZRouter> = [
     {
-        path: "/", element: <div>首页</div>, title: "首页",
+        path: "/", element:<Home />, title: "首页",
         children: [
             {
                 path: "frontPage", element: <div>好文翻译</div>,
@@ -20,7 +26,7 @@ export const router: Array<ZRouter> = [
 
             },
             {
-                path: "testPage", element: <div>测试</div>,
+                path: "testPage", element: <Test />,
             },
             { path: "zvideo", element: <div>视频</div> },
         ],
