@@ -32,7 +32,7 @@
     }
 
     var _dec$2, _dec2$2, _class$2, _class2$2;
-    function _applyDecoratedDescriptor$2(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+    function _applyDecoratedDescriptor$2(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer ? (Object.defineProperty(i, e, a), null) : a; }
     let BookController$1 = (_dec$2 = Controller("/book"), _dec2$2 = RequestMapping(RequestMethod.GET, "/all"), _dec$2(_class$2 = (_class2$2 = class BookController {
       async getAllBooks(ctx) {
         return new Promise((resolve, reject) => {
@@ -175,7 +175,7 @@
     ;
 
     var _dec$1, _dec2$1, _dec3, _class$1, _class2$1;
-    function _applyDecoratedDescriptor$1(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+    function _applyDecoratedDescriptor$1(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer ? (Object.defineProperty(i, e, a), null) : a; }
     let UserController = (_dec$1 = Controller("/user"), _dec2$1 = RequestMapping(RequestMethod.GET, "/all"), _dec3 = RequestMapping(RequestMethod.POST, "/login"), _dec$1(_class$1 = (_class2$1 = class UserController {
       async getAllTeachers(ctx) {
         ctx.body = {
@@ -2855,7 +2855,7 @@
     };
 
     var _dec, _dec2, _class, _class2;
-    function _applyDecoratedDescriptor(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer && (Object.defineProperty(i, e, a), a = null), a; }
+    function _applyDecoratedDescriptor(i, e, r, n, l) { var a = {}; return Object.keys(n).forEach(function (i) { a[i] = n[i]; }), a.enumerable = !!a.enumerable, a.configurable = !!a.configurable, ("value" in a || a.initializer) && (a.writable = !0), a = r.slice().reverse().reduce(function (r, n) { return n(i, e, r) || r; }, a), l && void 0 !== a.initializer && (a.value = a.initializer ? a.initializer.call(l) : void 0, a.initializer = void 0), void 0 === a.initializer ? (Object.defineProperty(i, e, a), null) : a; }
     let BookController = (_dec = Controller("/feed"), _dec2 = RequestMapping(RequestMethod.GET, "/list"), _dec(_class = (_class2 = class BookController {
       async getAllBooks(ctx) {
         // return new Promise((resolve, reject) => {
@@ -2904,7 +2904,7 @@
     // jwt
     app.use(jwtVerify([
     // 跳过这两个接口的验证
-    "/api/user/login", '/api/user/register']));
+    "/api/user/login", '/api/user/register', '/api/feed/list']));
     const COMMON_API = '/api';
     controllers.forEach(item => {
       let {

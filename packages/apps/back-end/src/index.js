@@ -33,6 +33,7 @@ app.use(jwtVerify(
         // 跳过这两个接口的验证
         "/api/user/login",
         '/api/user/register',
+        '/api/feed/list'
     ]
 ));
 
