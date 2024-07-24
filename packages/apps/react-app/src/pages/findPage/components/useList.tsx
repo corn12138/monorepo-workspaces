@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { connect } from 'react-redux'; //引入connect
+import { connect } from 'react-redux'; //引入connect --- 用来取 redux 中的数据
 
 interface Props {
         users: string[];
