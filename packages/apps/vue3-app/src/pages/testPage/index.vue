@@ -6,12 +6,18 @@
 
             <div>{{ count }}</div>
         </div>
-
+        <div>
+            <Modal>
+                测试
+            </Modal>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed,watch,onMounted} from 'vue';
+
+import Modal from '@/components/modal/index.vue';
 
 let count = ref<number>(1);
 let price = ref<number>(0);

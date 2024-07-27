@@ -26,6 +26,14 @@ const routes: Array<RouteRecordRaw> = [
                 name: 'testPage',
                 component: () => import("@/pages/testPage/index.vue")
             },
+            // {
+            //     path:"/modalPage",
+            //     name:"modalPage",
+            //     component:()=>import("@/pages/modal/index.vue"),
+            //     meta:{
+            //         title:"模态框"
+            //     }
+            // }
 
         ]
     },
