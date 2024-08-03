@@ -7,24 +7,25 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 export default defineConfig({
-    plugins:[
-    vue(),
-    AutoImport({
-    resolvers:[
-    ElementPlusResolver(),
-    ]
-    })
+    plugins: [
+        vue(),
+        AutoImport({
+            resolvers: [
+                ElementPlusResolver(),
+            ]
+        }),
+        Components({ resolvers: [ElementPlusResolver()] }),
     ],
-    server:{
-        host:"0,0,0,0",
-        hot:true
+    server: {
+        host: "localhost",
+        hot: true
     },
-    resolve:{
-    alias:{
-        "@":path.resolve(__dirname,"src")
-    }
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "src")
+        }
     },
-    build:{
-        outDir:"dist"
+    build: {
+        outDir: "dist"
     }
 })

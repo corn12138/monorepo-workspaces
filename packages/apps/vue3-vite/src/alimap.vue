@@ -9,18 +9,9 @@
         <div class="fl fl_jc_sb fl_ai_c map_tools">
             <div class="fl map_search">
                 <div class="map_search_key">
-                    <input
-                        v-model="search_key"
-                        type="text"
-                        class="map_search_key_input"
-                        placeholder="搜索地点"
-                        @input="onInput"
-                        @keyup.enter="searchSuggest"
-                        @keyup.escape.stop="clearSearch" />
-                    <img
-                        v-show="search_key"
-                        @click="clearSearch"
-                        class="map_search_key_clear"
+                    <input v-model="search_key" type="text" class="map_search_key_input" placeholder="搜索地点"
+                        @input="onInput" @keyup.enter="searchSuggest" @keyup.escape.stop="clearSearch" />
+                    <img v-show="search_key" @click="clearSearch" class="map_search_key_clear"
                         src="/assets/amap_search_clear.svg" />
                 </div>
                 <div class="map_search_btn fl_center">
@@ -28,16 +19,11 @@
                 </div>
                 <div class="suggest_result" v-show="suggest_result.length">
                     <div class="suggest_result_list">
-                        <div
-                            class="suggest_result_item fl fl_ai_s"
-                            v-for="item in suggest_result"
-                            :key="item.id"
+                        <div class="suggest_result_item fl fl_ai_s" v-for="item in suggest_result" :key="item.id"
                             @click="poiSearch(item)">
                             <img src="/assets/amap_search_locate.svg" class="map_search_locate" />
-                            <span class="sug_val"
-                                ><strong>{{ search_key }}</strong
-                                >{{ item.name.replace(search_key, "") }}</span
-                            >
+                            <span class="sug_val"><strong>{{ search_key }}</strong>{{ item.name.replace(search_key, "")
+                                }}</span>
                             <span class="district">{{ item.pname }}{{ item.cityname }}{{ adname }}</span>
                         </div>
                     </div>
@@ -46,19 +32,15 @@
             <div class="fl">
                 <div class="fl" v-show="state.currentLayer === 'satellite'">
                     <div style="position: relative">
-                        <el-button class="mgR10" @click="openRemoveRoadNetDialog"
-                            ><div class="fl fl_ai_c">
+                        <el-button class="mgR10" @click="openRemoveRoadNetDialog">
+                            <div class="fl fl_ai_c">
                                 <img src="/assets/amap_action_screenshot.svg" /> <span class="mgL5">截图</span>
                             </div>
                         </el-button>
 
                         <div v-if="state.screenshotVisible" class="alimap_tooltip">
-                            点击截取航拍图；<el-button
-                                link
-                                style="color: rgba(255, 228, 26, 1); font-size: 12px"
-                                @click="setTipVisible('screenshotVisible')"
-                                >知道了</el-button
-                            >
+                            点击截取航拍图；<el-button link style="color: rgba(255, 228, 26, 1); font-size: 12px"
+                                @click="setTipVisible('screenshotVisible')">知道了</el-button>
                             <span class="arrow"></span>
                         </div>
                     </div>
@@ -69,19 +51,16 @@
                 </div>
                 <div style="position: relative">
                     <el-button-group>
-                        <el-button
-                            :type="state.currentLayer === 'satellite' ? 'primary' : 'default'"
+                        <el-button :type="state.currentLayer === 'satellite' ? 'primary' : 'default'"
                             @click="changeLayerTo('satellite')">
                             <div class="fl fl_ai_fe">
                                 <img v-show="state.currentLayer === '2D'" src="/assets/amap_layer_satellite.svg" />
-                                <img
-                                    v-show="state.currentLayer === 'satellite'"
+                                <img v-show="state.currentLayer === 'satellite'"
                                     src="/assets/amap_layer_satellite_active.svg" />
                                 <span class="mgL5">卫星地图</span>
                             </div>
                         </el-button>
-                        <el-button
-                            :type="state.currentLayer === '2D' ? 'primary' : 'default'"
+                        <el-button :type="state.currentLayer === '2D' ? 'primary' : 'default'"
                             @click="changeLayerTo('2D')">
                             <div class="fl fl_ai_fe">
                                 <img v-show="state.currentLayer === 'satellite'" src="/assets/amap_layer_2d.svg" />
@@ -91,12 +70,8 @@
                         </el-button>
                     </el-button-group>
                     <div v-if="state.satelliteLayerVisible" class="alimap_tooltip" style="width: 205px; left: 25%">
-                        点击卫星地图截取航拍图；<el-button
-                            link
-                            style="color: rgba(255, 228, 26, 1); font-size: 12px"
-                            @click="setTipVisible('satelliteLayerVisible')"
-                            >知道了</el-button
-                        >
+                        点击卫星地图截取航拍图；<el-button link style="color: rgba(255, 228, 26, 1); font-size: 12px"
+                            @click="setTipVisible('satelliteLayerVisible')">知道了</el-button>
                         <span class="arrow"></span>
                     </div>
                 </div>
@@ -327,7 +302,7 @@ function addContextMenu(e) {
             setProjectAddress(lnglat);
         });
     }
-    
+
     const click_menu_screenshot = document.getElementById("js_alimap_right_click_menu_screenshot");
     if (click_menu_screenshot) {
         click_menu_screenshot.addEventListener("click", function (event) {
@@ -490,7 +465,7 @@ function startScreenshot() {
                 }
             });
         };
-      
+
         const keydownScreenshotHandler = () => {
             if (cropper) {
                 cropper.cancelCrop();
@@ -532,17 +507,20 @@ onMounted(() => {
 .amap_dialog_header {
     margin: 16px;
 }
+
 .sub_title {
     font-size: 12px;
     font-weight: 400;
     color: rgba(0, 87, 255, 1);
     margin-left: 8px;
 }
+
 .map_body {
     width: 100%;
     height: calc(100vh - 60px);
     position: relative;
 }
+
 .map_container {
     width: 100%;
     height: 100%;
@@ -577,9 +555,11 @@ onMounted(() => {
     border: none !important;
     margin-right: 24px;
 }
+
 .map_search_key_input:focus {
     outline: none !important;
 }
+
 .map_search_key_clear {
     position: absolute;
     right: 5px;
@@ -589,6 +569,7 @@ onMounted(() => {
     height: 18px;
     cursor: pointer;
 }
+
 .map_search_btn {
     width: 57px;
     height: 38px;
@@ -596,6 +577,7 @@ onMounted(() => {
     background-color: #3385ff;
     cursor: pointer;
 }
+
 .suggest_result {
     position: absolute;
     width: 368px;
@@ -607,9 +589,11 @@ onMounted(() => {
     top: 38px;
     overflow-y: auto;
 }
+
 .map_search_locate {
     margin-right: 3px;
 }
+
 .suggest_result_item {
     padding: 0 10px;
     cursor: pointer;
@@ -617,9 +601,11 @@ onMounted(() => {
     white-space: nowrap;
     line-height: 32px;
 }
+
 .suggest_result_item:hover {
     background-color: #eee;
 }
+
 .sug_val {
     font-size: 13px;
     font-weight: 400;
@@ -629,12 +615,14 @@ onMounted(() => {
 .sug_val strong {
     color: #0082e5;
 }
+
 .district {
     margin-left: 10px;
     margin-right: 5px;
     color: #999;
     font-size: 12px;
 }
+
 .alimap_btn_cancel {
     margin-right: 20px;
 }
@@ -688,7 +676,8 @@ onMounted(() => {
     text-align: center;
     font-size: 12px;
 }
-.alimap_tooltip > span.arrow {
+
+.alimap_tooltip>span.arrow {
     width: 12px;
     height: 12px;
     position: absolute;
@@ -701,10 +690,11 @@ onMounted(() => {
 </style>
 
 <style>
-#root{
+#root {
     overflow: hidden;
     height: 100%;
 }
+
 .alimap_marker_icon {
     width: 40px;
     height: 40px;

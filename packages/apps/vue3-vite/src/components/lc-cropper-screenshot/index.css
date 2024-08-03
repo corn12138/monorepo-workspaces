@@ -1,0 +1,39 @@
+/*  */
+.cropper_buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #333;
+    position: absolute;
+    border-radius: 4px;
+    z-index: 999999;
+    padding: 8px 0;
+}
+/*  */
+.cropper_button {
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 12px;
+}
+
+.download_button {
+    background-image: url(./download.svg);
+}
+
+.cancel_button {
+    background-image: url(./wrong.svg);
+}
+
+.recrop_button {
+    background-image: url(./redo.svg);
+}
+
+.confirm_button {
+    background-image: url(./right.svg);
+}
