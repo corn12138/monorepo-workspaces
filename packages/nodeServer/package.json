@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "nodemon",
+    "dev": "nodemon --max_old_space_size=10240 ./src/main.js",
     "build": "tsc"
   },
   "keywords": [],
@@ -23,8 +23,10 @@
     "koa-passport": "^6.0.0",
     "koa-session": "^6.4.0",
     "koa-static": "^5.0.0",
+    "koa-views": "^8.1.0",
     "mongoose": "^8.4.5",
     "passport": "^0.7.0",
+    "pm2": "^5.4.2",
     "sequelize": "^6.37.3",
     "socket.io": "^4.7.5",
     "swagger-koa": "^2.1.0"
@@ -32,6 +34,10 @@
   "devDependencies": {
     "@types/koa": "^2.15.0",
     "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-session": "^6.4.5",
+    "@types/koa-static": "^4.0.4",
+    "@types/koa-views": "^7.0.0",
+    "@types/mongoose": "^5.11.97",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
