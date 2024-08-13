@@ -1,6 +1,6 @@
 // hoc
 import React, { useState, useEffect } from 'react';
-
+// 
 const withDataFetching = (url) => (WrappedComponent) => {
     return () => {
         const [data, setData] = useState([]);
