@@ -186,13 +186,13 @@ const RecommendList = ({ }: Props) => {
     //         lockRef.current = false
     //         apiGet({
     //             url: 'feed',
-    //             startNum: listRef.current.length,
+    //             startNum: list.length,
     //             pageSize: 10
     //         }).then(res => {
     //             // 这里 小心闭包的陷阱（因为下边存的setList 上边的如果是 startNum:list.length 拿不到最新的） 
     //             //---> 处理的方案一：dispatch 函数的参数，可以是一个函数。 方案二：使用一个ref(listRef) 去储存最新的数据
-    //             listRef.current = [...listRef.current, ...res?.list as unknown as Array<any>]
-    //             setList(listRef.current)
+    //             list = [...list, ...res?.list as unknown as Array<any>]
+    //             setList(list)
     //             lockRef.current = true
     //         })
     //     }

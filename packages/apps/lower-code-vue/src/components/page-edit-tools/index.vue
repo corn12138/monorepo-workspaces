@@ -15,7 +15,7 @@
 <script setup>
 import { useStore } from 'vuex';
 import { computed } from 'vue';
-import { getUuid } from '../../../utils/uuid';
+import { getUuid } from '../../utils/uuid';
 //  使用vuex
 const stote = useStore();
 //  获取vuex中的state

@@ -1,5 +1,6 @@
 import { BaseTrack, UserTrackData } from "./track";
 
+// 代码中的 BaseTrack 类和 UserTrackData 接口是我们自己定义的，用于埋点的数据结构和发送逻辑。
 export class Performance {
     public static readonly timing = window.performance?.timing;
     public static init(){

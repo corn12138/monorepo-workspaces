@@ -1,8 +1,10 @@
 <template>
+  <!-- 这是中间的 组件堆叠起来的样式 -->
   <iframe id="edit_preview_iframe_ref" src="/edit/preview/:page_id" class="child-iframe" />
 </template>
 
 <script setup>
+// 通过useStore获取store对象
 import { computed, onMounted, onUnmounted, watch, toRaw } from 'vue';
 import { useStore } from 'vuex';
 
