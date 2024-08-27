@@ -7,6 +7,7 @@
 // 通过useStore获取store对象
 import { computed, onMounted, onUnmounted, watch, toRaw } from 'vue';
 import { useStore } from 'vuex';
+import { addPage } from '@/utils/db'; // 引入indexDB addPage方法
 
 const store = useStore();
 const previews = computed(() => store.state.lowerCode);
@@ -21,6 +22,8 @@ watch(listpreviews, (newVal) => {
     let lista = JSON.parse(JSON.stringify(toRaw(newVal)));
     console.log(lista, "我是page-edit-preview--->watch监听到的数据");
     childIframeWin.postMessage({ message: "onCreateComponent", data: lista });
+    // 将数据存储到indexDB
+    addPage(123, lista);
   }
 });
 

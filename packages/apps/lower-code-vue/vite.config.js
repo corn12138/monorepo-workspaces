@@ -9,6 +9,7 @@ export default defineConfig({
         alias: {
             '@': '/src',
             "@c": '/src/components',
+            '@lc':'/src/components/lc'
         }
     },
     server: {  // 配置服务

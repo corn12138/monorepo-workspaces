@@ -1,8 +1,13 @@
 <template>
     <div class="page_edit_content_tools">
         <div class="_content_tools_inner fl fl_jc_sb fl_ai_c fl_warp">
-            <template v-for="item in toolsList" :key="item.title">
-                <div class="_content_tools_item flv fl_ai_c" @click="addComponent(item.componentSchema)">
+            <template v-for="item of toolsList" :key="item.title">
+                <div class="_content_tools_item flv fl_ai_c"  @click="
+                        () => {
+                            console.log('添加组件---》》》》》', item.componentSchema);
+                            addComponent(item.componentSchema);
+                        }
+                    ">
                     <img :src="item.icon" class="_content_tools_item_icon" />
                     <span>{{ item.title }}</span>
                     <span class=""> {{ pageConfigs.count[item.componentName] ?? 0 }}/{{ item.limit }}</span>
@@ -16,6 +21,7 @@
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 import { getUuid } from '../../utils/uuid';
+import _ from 'lodash';
 //  使用vuex
 const stote = useStore();
 //  获取vuex中的state
@@ -63,11 +69,11 @@ const toolsList = [
 //  添加组件
 const addComponent = async (item) => {
 
-    const componentItem = Object.assign({}, item);
+    // const componentItem = Object.assign({}, item);
+    const componentItem = _.cloneDeep(item); //  这里是深拷贝
     const uuid = getUuid();
     //  这里是将组件添加到vuex中
     componentItem._id = uuid;
-    console.log(componentItem, "componentItem");
     //  这里是将组件添加到vuex中
     await stote.dispatch('lowerCode/setComponents', [...pageConfigs.value.components, componentItem]);
     //将id添加到vuex中

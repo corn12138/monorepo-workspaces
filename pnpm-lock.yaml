@@ -146,6 +146,12 @@ importers:
 
   packages/apps/lower-code-vue:
     dependencies:
+      dexie:
+        specifier: ^4.0.8
+        version: 4.0.8
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       vue:
         specifier: ^3.4.31
         version: 3.4.35(typescript@5.5.4)
@@ -3563,6 +3569,9 @@ packages:
 
   detect-node@2.1.0:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
+
+  dexie@4.0.8:
+    resolution: {integrity: sha512-1G6cJevS17KMDK847V3OHvK2zei899GwpDiqfEXHP1ASvme6eWJmAp9AU4s1son2TeGkWmC0g3y8ezOBPnalgQ==}
 
   didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -10251,6 +10260,8 @@ snapshots:
     optional: true
 
   detect-node@2.1.0: {}
+
+  dexie@4.0.8: {}
 
   didyoumean@1.2.2: {}
 

@@ -8,6 +8,7 @@
 import TitleTextConfig
     from '@c/config-components/TitleTextConfig.vue';
 import ImageConfig from '@c/config-components/ImageConfig.vue';
+import { keys } from 'lodash';
 
 export default {
     components: {
@@ -42,8 +43,10 @@ watch(() => configStore.value.currentComponentId, (newVal, oldVal) => {
         getCurrentComponent(newVal);
     }
 });
-function onSettubgsChange(id, settings) {
-    console.log('page-edit-config--->onSettubgsChange', id, settings);
+// 监听当前组件的数据变化
+function onSettubgsChange(key, val) {
+    console.log('page-edit-config--->onSettubgsChange', key, val);
+    currentComponent.value.settings[key] = val;
 }   
 </script>
 <style scoped></style>

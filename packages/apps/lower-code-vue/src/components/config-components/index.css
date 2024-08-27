@@ -1,0 +1,10 @@
+.config-title{
+    padding: 14px;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.config-content{
+    padding: 14px;
+}
