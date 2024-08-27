@@ -1,25 +1,19 @@
 <template>
     <!-- <h1>编辑器配置组件属性的地方</h1> -->
     <component v-if="currentComponent && currentComponent.configComponentName"
-        :is="currentComponent.configComponentName" :data="currentComponent" :change="onSettubgsChange" />
+        :is="components[currentComponent.configComponentName]" :data="currentComponent" :change="onSettubgsChange" />
 </template>
 
-<script>
-import TitleTextConfig
-    from '@c/config-components/TitleTextConfig.vue';
+<script setup>
+import TitleTextConfig from '@c/config-components/TitleTextConfig.vue';
 import ImageConfig from '@c/config-components/ImageConfig.vue';
 import SpaceConfig from '@c/config-components/SpaceConfig.vue';
-
-export default {
-    components: {
-        TitleTextConfig,
-        ImageConfig,
-        SpaceConfig
-    }
-}
-
-</script>
-<script setup>
+// 组件
+const components = {
+    TitleTextConfig,
+    ImageConfig,
+    SpaceConfig
+};
 import { ref, watch, toRaw, computed } from 'vue';
 import { useStore } from 'vuex';
 import _ from 'lodash';

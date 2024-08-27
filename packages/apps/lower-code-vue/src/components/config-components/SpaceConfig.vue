@@ -5,7 +5,7 @@
             <div class="config-content-item fl fl_jc_sb fl_ai_c">
                 <span class="config-content-item-label">留白高度：</span>
                 <span>
-                    <NumberInput :default-value="dataType.settings.style.height"
+                    <NumberInput :default-value="data.settings.style.height"
                         @change="val => changeValue(['style', 'height'], val)" />
                 </span>
             </div>

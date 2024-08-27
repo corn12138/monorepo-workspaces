@@ -25,6 +25,7 @@ import _ from 'lodash';
 const stote = useStore();
 //  获取vuex中的state
 const pageConfigs = computed(() => stote.state.lowerCode);
+console.log('pageConfigs', pageConfigs.count);
 //  我先在这里定义了一个工具列表，后续会从vuex中获取
 import { toolsList } from "@/assets/js/list.js"
 //  添加组件
