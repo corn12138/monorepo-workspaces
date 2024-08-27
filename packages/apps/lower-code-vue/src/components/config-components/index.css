@@ -8,3 +8,7 @@
 .config-content{
     padding: 14px;
 }
+
+.config-content-item{
+    margin-top: 16px;
+}

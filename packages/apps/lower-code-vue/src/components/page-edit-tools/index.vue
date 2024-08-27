@@ -1,12 +1,11 @@
 <template>
     <div class="page_edit_content_tools">
-        <div class="_content_tools_inner fl fl_jc_sb fl_ai_c fl_warp">
+        <div class="_content_tools_inner fl fl_jc_sb fl_ai_c fl_wrap">
             <template v-for="item of toolsList" :key="item.title">
-                <div class="_content_tools_item flv fl_ai_c"  @click="
-                        () => {
-                            console.log('添加组件---》》》》》', item.componentSchema);
-                            addComponent(item.componentSchema);
-                        }
+                <div class="_content_tools_item flv fl_ai_c" @click="() => {
+                        console.log('添加组件---》》》》》', item.componentSchema);
+                        addComponent(item.componentSchema);
+                    }
                     ">
                     <img :src="item.icon" class="_content_tools_item_icon" />
                     <span>{{ item.title }}</span>
@@ -27,45 +26,7 @@ const stote = useStore();
 //  获取vuex中的state
 const pageConfigs = computed(() => stote.state.lowerCode);
 //  我先在这里定义了一个工具列表，后续会从vuex中获取
-const toolsList = [
-    {
-        icon: "/images/title_text.svg",
-        title: "标题文本",
-        limit: 100,
-        componentName: "TitleText",
-        componentSchema: {
-            name: "标题文本",
-            componentName: "TitleText",
-            configComponentName: "TitleTextConfig",
-            settings: {
-                content: "这是一个标题文本",
-                style: {
-                    textAlign: "left",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                    color: "red" // 完全符合style css属性驼峰书写
-                }
-            }
-        }
-    },
-    {
-        icon: "/images/image.svg",
-        title: "图片",
-        limit: 500,
-        componentName: "Image",
-        componentSchema: {
-            name: "图片",
-            componentName: "Image",
-            configComponentName: "ImageConfig",
-            settings: {
-                url: "",
-                style: {
-                    borderRadius: "4px"
-                }
-            }
-        }
-    },
-];
+import { toolsList } from "@/assets/js/list.js"
 //  添加组件
 const addComponent = async (item) => {
 

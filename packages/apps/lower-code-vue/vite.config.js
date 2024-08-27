@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
     // 配置插件  用于解析 .vue 文件
-    plugins: [vue()],
+    plugins: [vue(),svgr({svgrOptions:{icon:true}})],
     resolve: {  // 配置别名 
         alias: {
             '@': '/src',

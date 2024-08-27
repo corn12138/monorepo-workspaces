@@ -8,12 +8,13 @@
 import TitleTextConfig
     from '@c/config-components/TitleTextConfig.vue';
 import ImageConfig from '@c/config-components/ImageConfig.vue';
-import { keys } from 'lodash';
+import SpaceConfig from '@c/config-components/SpaceConfig.vue';
 
 export default {
     components: {
         TitleTextConfig,
-        ImageConfig
+        ImageConfig,
+        SpaceConfig
     }
 }
 
@@ -21,16 +22,17 @@ export default {
 <script setup>
 import { ref, watch, toRaw, computed } from 'vue';
 import { useStore } from 'vuex';
+import _ from 'lodash';
 const store = useStore();
 const configStore = computed(() => store.state.lowerCode);
 const currentComponent = ref(null);    // 当前组件
 // 当前组件的数据
 function getCurrentComponent(newVal) {
     if (configStore.value.components.length > 0) {
-        const stateRC = toRaw(configStore.value.components);
+        const stateRC = [].concat(toRaw(configStore.value.components));
         stateRC.forEach((item) => {
             if (item._id === newVal) {
-                console.log(item,"这是一个标题文本")
+                console.log(item, "这是一个标题文本")
                 currentComponent.value = Object.assign({}, item);
                 return;
             }
@@ -45,8 +47,12 @@ watch(() => configStore.value.currentComponentId, (newVal, oldVal) => {
 });
 // 监听当前组件的数据变化
 function onSettubgsChange(key, val) {
-    console.log('page-edit-config--->onSettubgsChange', key, val);
-    currentComponent.value.settings[key] = val;
+    console.log('page-edit-config--->onSettubgsChange', key);
+    if (_.isArray(key)) {
+        currentComponent.value.settings[key[0]][key[1]] = val;
+    } else if (_.isString(key)) {
+        currentComponent.value.settings[key] = val;
+    }
 }   
 </script>
 <style scoped></style>

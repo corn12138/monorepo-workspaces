@@ -14,11 +14,15 @@
 <script>
 import TitleText from '@c/view-components/TitleText.vue';
 import Image from '@c/view-components/Image.vue';
+import Space from '@c/view-components/Space.vue';
+import Carousel from '@c/view-components/Carousel.vue';
 
 export default {
     components: {
         TitleText,
-        Image
+        Image,
+        Space,
+        Carousel
     }
 }
 </script>
