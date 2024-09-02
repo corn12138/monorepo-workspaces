@@ -2,8 +2,6 @@
     <div>
         <svg :width="width" :height="height">
             <use :href="svgSrc" :fill="fillColor" :stroke="strokeColor" :width="width" :height="height" />
-
-
         </svg>
     </div>
 </template>

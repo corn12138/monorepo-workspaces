@@ -16,6 +16,17 @@ import "./index.css"
 import ContentInput from "@lc/content-input/index.vue";
 // props 用于定义组件的属性
 const props = defineProps(['data', 'change']);
+// const props = {
+//   data: {
+//     type: Object,
+
+//     default: () => { return {} }
+//   },
+//   change: {
+//     type: Function,
+//     default: () => { }
+//   }
+// }
 const changeValue = (key, val) => {
   props.change(key, val);
 }

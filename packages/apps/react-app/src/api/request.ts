@@ -20,7 +20,9 @@ export const apiGet = (opts: FeedOpts) => {
 
     return inst<any, any>({
         method: 'get',
-        url: `${COMMON_URL}/${opts.url}?startNum=${opts.startNum}&pageSize=${opts.pageSize}`
+        url: `${COMMON_URL}/${opts.url}?startNum=${opts.startNum}&pageSize=${opts.pageSize}`,
+        responseType: 'json',
+        timeout: 10000,
     })
 }
 // 模拟测试 rudex 的异步存储的

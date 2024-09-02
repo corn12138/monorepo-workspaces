@@ -5,9 +5,9 @@
 </template>
 
 <script setup>
-import TitleTextConfig from '@c/config-components/TitleTextConfig.vue';
-import ImageConfig from '@c/config-components/ImageConfig.vue';
-import SpaceConfig from '@c/config-components/SpaceConfig.vue';
+import TitleTextConfig from '@c/config-components/TitleTextConfig.vue'; //标题文本配置
+import ImageConfig from '@c/config-components/ImageConfig.vue'; //图片配置
+import SpaceConfig from '@c/config-components/SpaceConfig.vue'; //留白配置
 // 组件
 const components = {
     TitleTextConfig,

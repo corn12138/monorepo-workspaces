@@ -5,31 +5,28 @@
             <div class="component-place"
                 :class="{ current: storeState.currentComponentId && storeState.currentComponentId === item._id }">
                 <div class="select-box"></div>
-                <component :is="item.componentName" :data="item" @click="selectComponent(item._id)" />
+                <component :is="components[item.componentName]" :data="item" @click="selectComponent(item._id)" />
             </div>
         </template>
     </div>
 </template>
 
-<script>
+
+<script setup>
+import { useStore } from 'vuex';
+import { computed, onMounted, watch } from 'vue';
+// 组件
 import TitleText from '@c/view-components/TitleText.vue';
 import Image from '@c/view-components/Image.vue';
 import Space from '@c/view-components/Space.vue';
 import Carousel from '@c/view-components/Carousel.vue';
 
-export default {
-    components: {
-        TitleText,
-        Image,
-        Space,
-        Carousel
-    }
-}
-</script>
-
-<script setup>
-import { useStore } from 'vuex';
-import { computed, onMounted, watch } from 'vue';
+const components = {
+    TitleText,
+    Image,
+    Space,
+    Carousel
+};
 
 const store = useStore();
 const storeState = computed(() => store.state.lowerCode);
@@ -55,7 +52,7 @@ const syncState = async (data) => {
 
 onMounted(() => {
     window.addEventListener("message", (event) => {
-        parent = event.source;
+        parent = event.source; // 保存父级window对象
         if (event.data) {
             const { message, data } = event.data;
             switch (message) {
