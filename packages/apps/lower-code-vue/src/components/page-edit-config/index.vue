@@ -8,11 +8,13 @@
 import TitleTextConfig from '@c/config-components/TitleTextConfig.vue'; //标题文本配置
 import ImageConfig from '@c/config-components/ImageConfig.vue'; //图片配置
 import SpaceConfig from '@c/config-components/SpaceConfig.vue'; //留白配置
+import CarouselConfig from '../config-components/CarouselConfig.vue'; //轮播配置
 // 组件
 const components = {
     TitleTextConfig,
     ImageConfig,
-    SpaceConfig
+    SpaceConfig,
+    CarouselConfig
 };
 import { ref, watch, toRaw, computed } from 'vue';
 import { useStore } from 'vuex';

@@ -62,9 +62,75 @@ export const toolsList = [
             componentName: "Carousel",
             configComponentName: "CarouselConfig",
             settings: {
-                urls: [""],
+                urls: ["789"],
                 direction: "horizontal",
                 type: "",
+            }
+        }
+    },
+    {
+        icon: "/images/carousel.svg",
+        title: "布局",
+        limit: 5,
+        componentName: "Layout",
+        componentSchema: {
+            name: "布局",
+            componentName: "Layout",
+            configComponentName: "LayoutConfig",
+            settings: {
+                layoutList: [
+                    {
+                        customize: false,
+                        label: "一行两列",
+                        icon: "/images/layout.svg",
+                        gridCount: 2, // 一行几个
+                        areas: [
+                            { startX: 0, startY: 0, endX: 0, endY: 1, url: "" }, // 从0开始
+                            { startX: 1, startY: 0, endX: 1, endY: 1 }
+                        ]
+                    },
+                    {
+                        customize: false,
+                        label: "一行三列",
+                        icon: "/images/layout.svg",
+                        gridCount: 3, // 一行几个
+                        areas: [
+                            { startX: 0, startY: 0, endX: 0, endY: 2 }, // 从0开始
+                            { startX: 1, startY: 0, endX: 1, endY: 2 },
+                            { startX: 2, startY: 0, endX: 2, endY: 2 }
+                        ]
+                    },
+                    {
+
+                        customize: false,
+                        label: "一行四列",
+                        icon: "/images/layout.svg",
+                        gridCount: 4, // 一行几个
+                        areas: [
+                            { startX: 0, startY: 0, endX: 0, endY: 3 }, // 从0开始
+                            { startX: 1, startY: 0, endX: 1, endY: 3 },
+                            { startX: 2, startY: 0, endX: 2, endY: 3 },
+                            { startX: 3, startY: 0, endX: 3, endY: 3 }
+                        ]
+                    }
+                    // {
+                    //     gridCount: 7, // 一行几个
+                    //     areas: [
+                    //         { startX: 0, startY: 0, endX: 1, endY: 1 }
+                    //     ]
+                    // },
+                    // {
+
+                    // }
+                ],
+                settings: {
+                    isCustom: false,
+                    gridCount: 2, // 一行几个
+                    areas: [
+                        { startX: 0, startY: 0, endX: 0, endY: 1, url: "" }, // 从0开始
+                        { startX: 1, startY: 0, endX: 1, endY: 1 }
+                    ]
+                }
             }
         }
     }
