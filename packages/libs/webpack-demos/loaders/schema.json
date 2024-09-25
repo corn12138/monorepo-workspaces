@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the loader (e.g. 'babel-loader')"
+        },
+        "additionalProperties":true
+    }
+}
