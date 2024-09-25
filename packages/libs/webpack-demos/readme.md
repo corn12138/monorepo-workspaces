@@ -46,6 +46,8 @@
 
 //loader：
 // 内部能力的延伸
+// pitch loader
+    
 
 // 4.打包产物
 //  * 面试： webpack的打包产物有何特点？
