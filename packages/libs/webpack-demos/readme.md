@@ -61,15 +61,35 @@ config.optiomization.splitChunks({
         name:"chunk-vendors",
         test:/[/]node_modules[/]_?echarts(.*)/
     },
-      common:{ name:"chunk-common",
+    commons:{ 
+      name:"chunk-common",
         minChunks:2,
-        priority:5 //
+        priority:5 //优先级
         }
     }
 })
 
 // 4.打包产物
 //  * 面试： webpack的打包产物有何特点？
+//主入口 default 形式进行挂载
+// __webpack_module_cache__ 模块缓存主储存
+// __webpack_require__ 依赖模块封装
+
+// 异步模块
+    // 函数封装=>独立promise不在同步cache中，故不会一起加载
+
 ```
 
 #### webpack的异步加载 - 异步分包
+1.webpack 的 require.ensure()
+2.ES6的 import()
+
+#### 热更新 HMR
+1. devServer =>runtime
+2. 页面首次加载 =>websoket 连接
+
+3. webpack监听到文件变化，增量构建=> hash事件
+4. 浏览器接收事件，增量范围确认
+5. 加载更新的模块
+6. webpack回调执行代码变更后逻辑
+7.finish

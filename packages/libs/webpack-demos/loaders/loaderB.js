@@ -1,6 +1,8 @@
+
+
 // 异步的loader
 module.exports = function(content,map,meta){
-    console.log('loaderB is excuted');
+    console.log('loaderB is 异步的loader');
     const callback = this.async();
     setTimeout(()=>{
         callback(null,content);

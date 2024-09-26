@@ -1,5 +1,5 @@
 
-
+// 手写一个插件
 class plugins {
     apply(compiler) {
         // 不同的生命周期
