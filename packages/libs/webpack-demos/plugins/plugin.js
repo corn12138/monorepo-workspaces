@@ -1,4 +1,4 @@
-const { set } = require("lodash");
+
 
 class plugins {
     apply(compiler) {

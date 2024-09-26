@@ -47,8 +47,29 @@
 //loader：
 // 内部能力的延伸
 // pitch loader
-    
+// loader 收集顺序和执行顺序
+
+//分包
+config.optiomization.splitChunks({
+    chunks:"all",
+    cacheGroups:{
+    vendors:{
+        name:"chunk-vendors",
+        test:/[/]node_modules[/]/
+    },
+    echarts:{
+        name:"chunk-vendors",
+        test:/[/]node_modules[/]_?echarts(.*)/
+    },
+      common:{ name:"chunk-common",
+        minChunks:2,
+        priority:5 //
+        }
+    }
+})
 
 // 4.打包产物
 //  * 面试： webpack的打包产物有何特点？
 ```
+
+#### webpack的异步加载 - 异步分包
