@@ -1,11 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-
+import { computed, ref } from 'vue'
+import top10 from '../top.js';
 defineProps({
   msg: String,
 })
 
 const count = ref(0)
+let mockData = ref('zhaowa jest mock data');
+let zhaowaNumber = computed(() => top10(8,10));
+
 </script>
 
 <template>
@@ -17,6 +20,8 @@ const count = ref(0)
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
+    <div>{{ mockData }}</div>
+    <div> <p>then number is :{{ zhaowaNumber }}</p></div>
   </div>
 
   <p>
