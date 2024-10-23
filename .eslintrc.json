@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true,
@@ -6,14 +7,24 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"  // 添加 React 支持
   ],
-  "parser": "@typescript-eslint/parse",
+  "parser": "@typescript-eslint/parser",  // 修复拼写错误
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true  // 如果需要解析 JSX
+    }
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "react"],
+  "settings": {
+    "react": {
+      "version": "detect"  // 自动检测 React 版本
+    }
+  },
   "rules": {
-
+    // 根据需求自定义规则
   }
 }
